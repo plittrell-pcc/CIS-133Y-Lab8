@@ -23,7 +23,7 @@ PROJECT_UI = os.path.join(PROJECT_PATH, "about.ui")
 class AboutApp:
 
     def __init__(self, master):
-        # Boilerplate from pygubu-designer. Renamed builder and mainwindow to use name mangling.
+        # Boilerplate from pygubu-designer.
         self.__builder = builder = pygubu.Builder()
         builder.add_resource_path(PROJECT_PATH)
         builder.add_from_file(PROJECT_UI)
@@ -31,7 +31,7 @@ class AboutApp:
         builder.connect_callbacks(self)
 
     def get_top_frame(self):
-        # Return the top frame for the app so that it can be displayed in a tabbed notebook.
+        # Return the top frame
         return self.__mainwindow
 
     def run(self):
