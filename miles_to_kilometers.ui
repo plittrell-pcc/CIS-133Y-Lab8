@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- ***************************************************************************
+#
+# Author: Paul Littrell & Adolfo Garcia
+# Lab:    CIS-133Y Lab8
+# Date:   November 11, 2026
+# Desc:   UI design file for the Miles to Kilometers calculator.
+#
+# Input:  None
+# Output: None
+# Source: Module 8 Lab 8
+# GitHub: https://github.com/plittrell-pcc/CIS-133Y-Lab8
+#
+# *************************************************************************** -->
+<interface version="1.1">
+  <object class="ttk.Frame" id="top_frame">
+    <property name="height">200</property>
+    <property name="padding">10</property>
+    <property name="width">200</property>
+    <layout manager="grid">
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+      <property name="sticky">nsew</property>
+      <property type="col" id="0" name="weight">1</property>
+      <property type="row" id="0" name="weight">1</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="top_label">
+        <property name="font">{Arial} 16 {bold}</property>
+        <property name="text" translatable="yes">Miles to Kilometers</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property type="col" id="0" name="weight">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="control_frame">
+        <property name="height">200</property>
+        <property name="padding">10</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property type="col" id="0" name="weight">1</property>
+          <property type="row" id="1" name="weight">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="label4">
+            <property name="text" translatable="yes">Miles:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="miles_entry">
+            <property name="width">10</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="button2">
+        <property name="command" type="command" cbtype="simple">calculate</property>
+        <property name="text" translatable="yes">Calculate</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="separator1">
+        <property name="orient">horizontal</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="pady">10</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+          <property name="sticky">ew</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="result_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="result_label">
+            <property name="font">{Arial} 12 {bold}</property>
+            <property name="padding">10</property>
+            <property name="text" translatable="yes">Results...</property>
+            <property name="textvariable">string:result_label_variable</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="kilometers_label">
+            <property name="text" translatable="yes">Kilometers:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="kilometers_entry">
+            <property name="state">readonly</property>
+            <property name="textvariable">string:kilometers_entry_variable</property>
+            <property name="width">15</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
