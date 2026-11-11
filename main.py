@@ -38,7 +38,7 @@ class MainApp:
         about_app = AboutApp(self.__mainwindow)
         self.__main_notebook.add(about_app.get_top_frame(), text="About...")
 
-        # Add calculator tab
+        # Add miles to kilometer calculator tab
         miles_to_km_app = MilesToKilometersApp(self.__mainwindow)
         self.__main_notebook.add(miles_to_km_app.get_top_frame(), text="Miles to Kilometers")
 
