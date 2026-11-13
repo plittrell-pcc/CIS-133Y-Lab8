@@ -1,6 +1,6 @@
 # ***************************************************************************
 #
-# Author: Paul Littrell & Adolfo Garcia
+# Author: Paul Littrell
 # Lab:    CIS-133Y Lab8
 # Date:   November 11, 2026
 # Desc:   Calculator app to convert distances from miles to kilometers.

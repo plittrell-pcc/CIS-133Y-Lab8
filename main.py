@@ -18,6 +18,7 @@ import tkinter.ttk as ttk
 
 from AboutApp import AboutApp
 from MilesToKilometersApp import MilesToKilometersApp
+from KilometersToMilesApp import KilometersToMilesApp
 
 class MainApp:
     def __init__(self, master):
@@ -41,6 +42,12 @@ class MainApp:
         # Add miles to kilometer calculator tab
         miles_to_km_app = MilesToKilometersApp(self.__mainwindow)
         self.__main_notebook.add(miles_to_km_app.get_top_frame(), text="Miles to Kilometers")
+
+
+        # Kilometers to miles calculator tab
+        km_to_miles_app = KilometersToMilesApp(self.__mainwindow)
+        self.__main_notebook.add(km_to_miles_app.get_top_frame(), text="Kilometers to Miles")
+
 
     def run(self):
         self.__mainwindow.mainloop()
