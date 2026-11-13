@@ -61,16 +61,6 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Button" id="calculate_button">
-        <property name="command" type="command" cbtype="simple">calculate</property>
-        <property name="text" translatable="yes">Calculate</property>
-        <layout manager="grid">
-          <property name="column">0</property>
-          <property name="row">2</property>
-        </layout>
-      </object>
-    </child>
-    <child>
       <object class="ttk.Separator" id="separator1">
         <property name="orient">horizontal</property>
         <layout manager="grid">
@@ -122,6 +112,32 @@
               <property name="row">1</property>
               <property name="sticky">w</property>
             </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="button_frame" named="True">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">2</property>
+        </layout>
+        <child>
+          <object class="ttk.Button" id="calculate_button">
+            <property name="command" type="command" cbtype="simple">calculate</property>
+            <property name="text" translatable="yes">Calculate</property>
+            <layout manager="pack">
+              <property name="side">right</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="clear_button" named="True">
+            <property name="command" type="command" cbtype="simple">clear</property>
+            <property name="text" translatable="yes">Clear</property>
+            <layout manager="pack" />
           </object>
         </child>
       </object>

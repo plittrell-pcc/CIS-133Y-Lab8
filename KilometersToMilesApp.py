@@ -49,6 +49,12 @@ class KilometersToMilesApp:
                 message="Kilometers must be a valid number. Please try again."
             )
 
+    def clear(self):
+        # Clear the input and conversion result
+        self.__kilometers_entry.delete(0, tk.END)
+        self.__miles_entry_variable.set("")
+        self.__kilometers_entry.focus_set()
+
     def get_top_frame(self):
         # Return the top frame
         return self.__mainwindow

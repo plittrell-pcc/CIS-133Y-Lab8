@@ -48,6 +48,11 @@ class MilesToKilometersApp:
             mb.showerror(title="Error Calculating Kilometers!",
                          message="Miles must be a valid number. Please try again.")
 
+    def clear(self):
+        self.__miles_entry.delete(0, tk.END)
+        self.__kilometers_entry_variable.set("")
+        self.__miles_entry.focus_set()
+
     def get_top_frame(self):
         # Return the top frame
         return self.__mainwindow
