@@ -35,6 +35,7 @@ class MilesToKilometersApp:
 
         # Save these UI elements as properties
         self.__miles_entry = builder.get_object('miles_entry', master)
+        self.__miles_entry.bind('<Return>', lambda event: self.calculate())
         self.__kilometers_entry_variable = builder.get_variable('kilometers_entry_variable')
 
     def calculate(self):
