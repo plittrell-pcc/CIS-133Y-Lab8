@@ -20,39 +20,42 @@ from AboutApp import AboutApp
 from MilesToKilometersApp import MilesToKilometersApp
 from KilometersToMilesApp import KilometersToMilesApp
 
+#Modified class to use tk.Toplevel instead of tk.Frame
 class MainApp:
-    def __init__(self, master):
-        # This is needed to allow the notebook tabs to stretch.
-        tk.Grid.columnconfigure(master, 0, weight=1)
-        tk.Grid.rowconfigure(master, 0, weight=1)
+    def __init__(self, master=None):
+        # Create a Toplevel widget as the root of the GUI
+        self.__mainwindow = tk.Toplevel(master)
+        self.__mainwindow.title("Distance Converter")
+        self.__mainwindow.protocol("WM_DELETE_WINDOW", self.__mainwindow.quit)
+
+        # Allow the notebook to stretch when the Toplevel window resizes
+        self.__mainwindow.columnconfigure(0, weight=1)
+        self.__mainwindow.rowconfigure(0, weight=1)
 
         # Build ui
-        self.__main_notebook = ttk.Notebook(master)
-        self.__main_notebook.grid(column='0', row='0', sticky='nsew')
-        self.__main_notebook.rowconfigure('0', weight='1')
-        self.__main_notebook.columnconfigure('0', weight='1')
-
-        # Main widget
-        self.__mainwindow = self.__main_notebook
+        self.__main_notebook = ttk.Notebook(self.__mainwindow)
+        self.__main_notebook.grid(column=0, row=0, sticky='nsew')
+        self.__main_notebook.rowconfigure(0, weight=1)
+        self.__main_notebook.columnconfigure(0, weight=1)
 
         # Add About... tab
-        about_app = AboutApp(self.__mainwindow)
+        about_app = AboutApp(self.__main_notebook)
         self.__main_notebook.add(about_app.get_top_frame(), text="About...")
 
         # Add miles to kilometer calculator tab
-        miles_to_km_app = MilesToKilometersApp(self.__mainwindow)
+        miles_to_km_app = MilesToKilometersApp(self.__main_notebook)
         self.__main_notebook.add(miles_to_km_app.get_top_frame(), text="Miles to Kilometers")
 
-
         # Kilometers to miles calculator tab
-        km_to_miles_app = KilometersToMilesApp(self.__mainwindow)
+        km_to_miles_app = KilometersToMilesApp(self.__main_notebook)
         self.__main_notebook.add(km_to_miles_app.get_top_frame(), text="Kilometers to Miles")
-
 
     def run(self):
         self.__mainwindow.mainloop()
 
+
 if __name__ == '__main__':
     root = tk.Tk()
+    root.withdraw()  # Hide the default Tk root so only the Toplevel window is shown
     app = MainApp(root)
     app.run()
